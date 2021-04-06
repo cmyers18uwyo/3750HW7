@@ -11,12 +11,12 @@ CC=gcc
 CFLAGS=-ggdb -Wall
 RM=/bin/rm -f
 #tidy and clean are not files
-.PHONY : tidy clean
+.PHONY : tidy clean all
 #wytalk will use the wytalk files and create an executable called wytalk
-wytalkD : wytalkD.c $(OBJS)
+all :
 	$(CC) $(CFLAGS) -o wytalkd wytalkD.c socketfun.c $(OBJS)
-wytalkC : wytalkC.c $(OBJS)
 	$(CC) $(CFLAGS) -o wytalkc wytalkC.c socketfun.c $(OBJS)
+
 #tidy will remove any object files in the directory
 tidy :
 	$(RM) *.o
